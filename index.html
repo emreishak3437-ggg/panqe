@@ -16,11 +16,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Navigasyon linklerinin hedefi olan bölümlerin üstten boşluğunu ayarlama */
-        section {
-            scroll-margin-top: 100px; /* Hakkımda kısmına tıklanınca daha iyi bir noktaya gitmesi için ayarlandı */
-        }
-
         /* Arka plan animasyonu için keyframes, daha koyu renkler kullanıldı */
         @keyframes background-color-change {
             0% { background-color: #0d121c; } /* Çok koyu lacivert */
@@ -95,33 +90,34 @@
     <!-- Ana içerik için kapsayıcı (wrapper) -->
     <div id="main-content" class="main-content-wrapper">
 
-        <!-- Navigasyon Menüsü -->
-        <!-- Sabitlenmiş pozisyon, sol üst köşede. Arka plan kaldırıldı. -->
-        <nav class="fixed top-8 left-8 z-20">
-            <div class="flex space-x-4">
-                <a href="#about" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">Hakkımda</a>
-                <a href="#beats" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">Beatler</a>
-                <a href="#contact" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">İletişim</a>
-            </div>
-        </nav>
-
-        <!-- Sosyal Medya İkonları -->
-        <!-- Sabitlenmiş pozisyon, sağ üst köşede. Arka plan kaldırıldı. -->
-        <div class="fixed top-8 right-8 flex space-x-4 z-10">
-            <!-- YouTube Link -->
-            <a href="https://www.youtube.com/@panqebeats" target="_blank" class="text-white hover:text-red-500 transition-colors rounded-full">
-                <i class="fab fa-youtube fa-xl"></i>
-            </a>
-            <!-- Instagram Link -->
-            <a href="https://www.instagram.com/panqebeatt/" target="_blank" class="text-white hover:text-pink-600 transition-colors rounded-full">
-                <i class="fab fa-instagram fa-xl"></i>
-            </a>
-        </div>
-        
         <!-- Ana içerik için bir kutu oluşturuldu, bu kutu sayfaya ortalanacak -->
         <div class="p-8 md:p-12 w-full max-w-4xl mx-auto my-8 relative">
             <!-- Header Section -->
             <header class="text-center mb-10 mt-20">
+                <!-- Navigasyon ve Sosyal Medya için yeni bir kapsayıcı eklendi -->
+                <!-- Bu kapsayıcı, sayfanın üstünde kalacak ancak kaydırıldığında sabitlenmeyecek -->
+                <div class="flex justify-between items-center w-full px-4 mb-8">
+                    <!-- Navigasyon Menüsü -->
+                    <nav>
+                        <div class="flex space-x-4">
+                            <a href="#about" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">Hakkımda</a>
+                            <a href="#beats" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">Beatler</a>
+                            <a href="#contact" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">İletişim</a>
+                        </div>
+                    </nav>
+
+                    <!-- Sosyal Medya İkonları -->
+                    <div class="flex space-x-4">
+                        <!-- YouTube Link -->
+                        <a href="https://www.youtube.com/@panqebeats" target="_blank" class="text-white hover:text-red-500 transition-colors rounded-full">
+                            <i class="fab fa-youtube fa-xl"></i>
+                        </a>
+                        <!-- Instagram Link -->
+                        <a href="https://www.instagram.com/panqebeatt/" target="_blank" class="text-white hover:text-pink-600 transition-colors rounded-full">
+                            <i class="fab fa-instagram fa-xl"></i>
+                        </a> 
+                    </div>
+                </div>
                 <!-- Sadece büyük ve beyaz renkte Panqe yazısı -->
                 <h1 class="text-6xl md:text-8xl font-bold mb-4 text-white">Panqe</h1>
                 <p class="text-md md:text-lg text-slate-300">Amatör bir Beatmaker ve Müzik Prodüktörüyüm.</p>
@@ -130,8 +126,8 @@
             <!-- About Section -->
             <section id="about" class="mb-10 text-center p-6 rounded-xl">
                 <p class="text-slate-200 leading-relaxed max-w-2xl mx-auto">
-                   Selamlar ben Emre,müziğe olan tutkumla, kendi sound'umu yaratmaya ve farklı türlerde beatler üretmeye odaklandım.Bu sektörde daha yeniyim ve çok fazla projem bulunmuyor.Kendimi geliştirmeyi ve beraber gelişmeyi umut ediyorum.
-                Burada kendi yaptığım veya yapmadığım free beatler bulunmaktadır.Sizlerin beatleri seveceğinden eminim,beatleri alıp müziğinizi oluşturabilirsiniz.
+                    Selamlar ben Emre,müziğe olan tutkumla kendi sound'umu yaratmaya ve farklı türlerde beatler üretmeye odaklandım.Bu sektörde daha yeniyim ve çok fazla projem bulunmuyor.Kendimi geliştirmeyi ve beraber gelişmeyi umut ediyorum.
+                    Burada kendi yaptığım veya yapmadığım free beatler bulunmaktadır.Sizlerin beatleri seveceğinden eminim,beatleri alıp müziğinizi oluşturabilirsiniz.
                 </p>
             </section>
 
@@ -209,7 +205,7 @@
                     <div class="relative pb-[56.25%] h-0 mb-4">
                         <iframe 
                             class="absolute top-0 left-0 w-full h-full rounded-lg" 
-                            src="https://www.youtube.com/embed/X3eBNKXJPzM?si=MYvWlOP3vs33LV-N" 
+                            src="https://www.youtube.com/embed/X3eBNKXJPzM?si=T-NhZ8lECElXnDVU"
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
@@ -224,13 +220,13 @@
                     <div class="relative pb-[56.25%] h-0 mb-4">
                         <iframe 
                             class="absolute top-0 left-0 w-full h-full rounded-lg" 
-                            src="https://www.youtube.com/embed/GQtpSmPWc-k?si=xZSpai6R33BHeRu1" 
+                            src="https://www.youtube.com/embed/GQtpSmPWc-k?si=FDNLERkbfeBzqJ8w" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
                     </div>
-                    <p class="text-sm text-slate-400">Bu beat, duyguların daha baskın olduğu ve müziği hissetmemizi sağlayan bir beattir.</p>
+                    <p class="text-sm text-slate-400">Bu beat, duygusu fazla ve artık sıkılmış bir beattir.</p>
                 </div>
             </section>
 
