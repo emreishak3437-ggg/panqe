@@ -10,119 +10,208 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        
+        /* Arka plan animasyonu için keyframes */
+        @keyframes background-color-change {
+            0% { background-color: #0F172A; } /* Koyu lacivert */
+            50% { background-color: #080f1e; } /* Daha koyu lacivert */
+            100% { background-color: #0F172A; } /* Koyu lacivert */
+        }
+        
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0F172A; /* Koyu lacivert arka plan rengi */
             color: #fff;
+            /* Animasyonu body'ye uygula */
+            animation: background-color-change 10s infinite alternate;
+        }
+
+        /* Giriş ekranı için stil */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0F172A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 1s ease-in-out;
+            opacity: 1;
+        }
+
+        #splash-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #splash-screen h1 {
+            font-size: 8rem;
+            font-weight: 700;
+            color: white;
+            animation: panqe-fade-in 2s ease-out;
+        }
+
+        @keyframes panqe-fade-in {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Ana içerik için başlangıçta gizleme ve geçiş efekti */
+        .main-content-wrapper {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .main-content-wrapper.visible {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
 
-    <!-- Ana İçerik Kutusu -->
-    <div class="container bg-slate-800 p-8 md:p-12 rounded-xl shadow-lg w-full max-w-4xl mx-auto my-8 relative">
-        
-        <!-- Sosyal Medya İkonları -->
-        <div class="absolute top-8 right-8 flex space-x-4 z-10">
-            <!-- Her bir logoya tıklama alanı daha belirgin hale getirildi (p-2) -->
-            <!-- YouTube Link -->
-            <a href="https://www.youtube.com/@panqebeats" target="_blank" class="text-white hover:text-red-500 transition-colors p-2 rounded-full">
-                <i class="fab fa-youtube fa-xl"></i>
-            </a>
-            <!-- Instagram Link -->
-            <a href="https://www.instagram.com/panqebeatt/" target="_blank" class="text-white hover:text-pink-600 transition-colors p-2 rounded-full">
-                <i class="fab fa-instagram fa-xl"></i>
-            </a> 
-        </div>
-        
-        <!-- Header Section -->
-        <header class="text-center mb-10 mt-20">
-            <h1 class="text-4xl md:text-6xl font-bold mb-2 text-blue-500">Merhaba, Ben Panqe!</h1>
-            <p class="text-md md:text-lg text-slate-300">Amatör bir Beatmaker ve Müzik Prodüktörüyüm.</p>
-        </header>
-
-        <!-- About Section -->
-        <section class="mb-10 text-center">
-            <p class="text-slate-400 leading-relaxed max-w-2xl mx-auto">
-                Müziğe olan tutkumla, kendi sound'umu yaratmaya ve farklı türlerde beatler üretmeye odaklandım.
-                Burada kendi yaptığım veya yapmadığım free beatler bulunmaktadır. İnsanların beatleri seveceğinden eminiz, alıp kullanabilirsiniz.
-            </p>
-        </section>
-
-        <!-- Beats Showcase Section -->
-        <!-- Dört video için kod düzenlendi -->
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-            <!-- Beat 1 -->
-            <div class="bg-slate-700 p-6 rounded-lg text-center shadow-md transform hover:scale-105 transition-transform duration-300">
-                <h2 class="text-2xl font-bold mb-4 text-white">BOOMBAP TYPE BEAT </h2>
-                <div class="relative pb-[56.25%] h-0 mb-4">
-                    <iframe 
-                        class="absolute top-0 left-0 w-full h-full rounded-lg" 
-                        src="https://www.youtube.com/embed/lpdC1ggrtgg?si=zY1pwGWkC08vv3RJ" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <p class="text-sm text-slate-400">Bu beat, sıradan insanların kullanacağı bir beat değildir.</p>
-            </div>
-
-            <!-- Beat 2 -->
-            <div class="bg-slate-700 p-6 rounded-lg text-center shadow-md transform hover:scale-105 transition-transform duration-300">
-                <h2 class="text-2xl font-bold mb-4 text-white">TRAP TYPE BEAT </h2>
-                <div class="relative pb-[56.25%] h-0 mb-4">
-                    <iframe 
-                        class="absolute top-0 left-0 w-full h-full rounded-lg" 
-                        src="https://www.youtube.com/embed/mxUgtd_gNn4?si=_GGjaVH3EbBqdDZ2" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <p class="text-sm text-slate-400">Bu beat, ağır duyguları olan ve sert bir beattir.</p>
-            </div>
-        </section>
-
-        <!-- İkinci video satırı eklendi -->
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-            <!-- Beat 3 -->
-            <div class="bg-slate-700 p-6 rounded-lg text-center shadow-md transform hover:scale-105 transition-transform duration-300">
-                <h2 class="text-2xl font-bold mb-4 text-white">SAD TYPE BEAT </h2>
-                <div class="relative pb-[56.25%] h-0 mb-4">
-                    <iframe 
-                        class="absolute top-0 left-0 w-full h-full rounded-lg" 
-                        src="https://www.youtube.com/embed/4PpvwFmhJvc?si=yvftZq-FPmnWfQvh" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <p class="text-sm text-slate-400">Bu beat, duyguların daha baskın olduğu bir beattir.</p>
-            </div>
-
-            <!-- Beat 4 -->
-            <div class="bg-slate-700 p-6 rounded-lg text-center shadow-md transform hover:scale-105 transition-transform duration-300">
-                <h2 class="text-2xl font-bold mb-4 text-white">DARK TYPE BEAT </h2>
-                <div class="relative pb-[56.25%] h-0 mb-4">
-                    <iframe 
-                        class="absolute top-0 left-0 w-full h-full rounded-lg" 
-                        src="https://www.youtube.com/embed/cOhtkOjmJN4?si=W98duUjZAU3Bshhz" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <p class="text-sm text-slate-400">Bu beat, cesaretin ta kendisidir ve korkusuz bir beattir.</p>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="text-center">
-            <h2 class="text-3xl font-bold mb-4 text-blue-500">İletişim</h2>
-            <p class="text-lg text-slate-400">Benimle iletişime geçmek için:</p>
-            <a href="mailto:panqebeats@gmail.com" class="text-lg text-white hover:text-blue-400 transition-colors">panqebeats@gmail.com</a>
-        </section>
+    <!-- Giriş Ekranı (Splash Screen) -->
+    <div id="splash-screen">
+        <h1 class="text-yellow-300">Panqe</h1>
     </div>
 
+    <!-- Navigasyon Menüsü -->
+    <nav class="fixed top-4 left-4 z-20">
+        <div class="flex flex-col space-y-2">
+            <a href="#about" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">Hakkımda</a>
+            <a href="#beats" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">Beatler</a>
+            <a href="#contact" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">İletişim</a>
+        </div>
+    </nav>
+
+    <!-- Ana içerik için kapsayıcı (wrapper) -->
+    <div id="main-content" class="main-content-wrapper">
+
+        <!-- Ana İçerik Kutusu -->
+        <div class="container bg-slate-800 p-8 md:p-12 rounded-xl shadow-lg w-full max-w-4xl mx-auto my-8 relative">
+            
+            <!-- Sosyal Medya İkonları -->
+            <div class="absolute top-8 right-8 flex space-x-4 z-10">
+                <!-- Her bir logoya tıklama alanı daha belirgin hale getirildi (p-2) -->
+                <!-- YouTube Link -->
+                <a href="https://www.youtube.com/@panqebeats" target="_blank" class="text-white hover:text-red-500 transition-colors p-2 rounded-full">
+                    <i class="fab fa-youtube fa-xl"></i>
+                </a>
+                <!-- Instagram Link -->
+                <a href="https://www.instagram.com/panqebeatt//" target="_blank" class="text-white hover:text-pink-600 transition-colors p-2 rounded-full">
+                    <i class="fab fa-instagram fa-xl"></i>
+                </a>
+            </div>
+            
+            <!-- Header Section -->
+            <header class="text-center mb-10 mt-20">
+                <h1 class="text-4xl md:text-6xl font-bold mb-2 text-blue-500">Merhaba, Ben Panqe!</h1>
+                <p class="text-md md:text-lg text-slate-300">Amatör bir Beatmaker ve Müzik Prodüktörüyüm.</p>
+            </header>
+
+            <!-- About Section -->
+            <section id="about" class="mb-10 text-center">
+                <p class="text-slate-400 leading-relaxed max-w-2xl mx-auto">
+                   Selamlar ben Emre, Müziğe olan tutkumla kendi sound'umu yaratmaya ve farklı türlerde beatler üretmeye odaklandım.Bu sektörde daha yeniyim ve kendimi geliştirmeye çalışıyorum.
+                    Burada kendi yaptığım veya yapmadığım free beatler bulunmaktadır.Sizlerin beatleri seveceğinizden eminim, Beatleri alıp kendi müziğinizi oluşturabilirsiniz.
+                </p>
+            </section>
+
+            <!-- Beats Showcase Section -->
+            <section id="beats" class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                <!-- Beat 1 -->
+                <div class="bg-slate-700 p-6 rounded-lg text-center shadow-md transform hover:scale-105 transition-transform duration-300">
+                    <h2 class="text-2xl font-bold mb-4 text-white">BOOMBAP TYPE BEAT </h2>
+                    <div class="relative pb-[56.25%] h-0 mb-4">
+                        <iframe 
+                            class="absolute top-0 left-0 w-full h-full rounded-lg" 
+                            src="https://www.youtube.com/embed/lpdC1ggrtgg?si=zY1pwGWkC08vv3RJ" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="text-sm text-slate-400">Bu beat, sıradan insanların kullanacağı bir beat değildir.</p>
+                </div>
+
+                <!-- Beat 2 -->
+                <div class="bg-slate-700 p-6 rounded-lg text-center shadow-md transform hover:scale-105 transition-transform duration-300">
+                    <h2 class="text-2xl font-bold mb-4 text-white">TRAP TYPE BEAT </h2>
+                    <div class="relative pb-[56.25%] h-0 mb-4">
+                        <iframe 
+                            class="absolute top-0 left-0 w-full h-full rounded-lg" 
+                            src="https://www.youtube.com/embed/mxUgtd_gNn4?si=_GGjaVH3EbBqdDZ2" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="text-sm text-slate-400">Bu beat, ağır duyguları olan ve sert bir beattir.</p>
+                </div>
+            </section>
+
+            <!-- İkinci video satırı eklendi -->
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                <!-- Beat 3 -->
+                <div class="bg-slate-700 p-6 rounded-lg text-center shadow-md transform hover:scale-105 transition-transform duration-300">
+                    <h2 class="text-2xl font-bold mb-4 text-white">SAD TYPE BEAT </h2>
+                    <div class="relative pb-[56.25%] h-0 mb-4">
+                        <iframe 
+                            class="absolute top-0 left-0 w-full h-full rounded-lg" 
+                            src="https://www.youtube.com/embed/4PpvwFmhJvc?si=yvftZq-FPmnWfQvh" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="text-sm text-slate-400">Bu beat, duyguların daha baskın olduğu bir beattir.</p>
+                </div>
+
+                <!-- Beat 4 -->
+                <div class="bg-slate-700 p-6 rounded-lg text-center shadow-md transform hover:scale-105 transition-transform duration-300">
+                    <h2 class="text-2xl font-bold mb-4 text-white">DARK TYPE BEAT </h2>
+                    <div class="relative pb-[56.25%] h-0 mb-4">
+                        <iframe 
+                            class="absolute top-0 left-0 w-full h-full rounded-lg" 
+                            src="https://www.youtube.com/embed/cOhtkOjmJN4?si=W98duUjZAU3Bshhz" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="text-sm text-slate-400">Bu beat, cesaretin ta kendisidir ve korkusuz bir beattir.</p>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="text-center">
+                <h2 class="text-3xl font-bold mb-4 text-blue-500">İletişim</h2>
+                <p class="text-lg text-slate-400">Benimle iletişime geçmek için:</p>
+                <a href="mailto:panqebeats@gmail.com" class="text-lg text-white hover:text-blue-400 transition-colors">panqebeats@gmail.com</a>
+            </section>
+        </div>
+
+    </div>
+
+    <script>
+        // Sayfa yüklendiğinde çalışacak JavaScript kodu
+        window.onload = function() {
+            const splashScreen = document.getElementById('splash-screen');
+            const mainContent = document.getElementById('main-content');
+            
+            // 2 saniye sonra giriş ekranını kaldır ve ana içeriği göster
+            setTimeout(() => {
+                splashScreen.classList.add('hidden');
+                mainContent.classList.add('visible');
+            }, 2000);
+        };
+    </script>
 </body>
 </html>
