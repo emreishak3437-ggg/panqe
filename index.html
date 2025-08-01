@@ -4,104 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panqe - Beatmaker</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 30px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #007bff; /* Mavi tonu */
-            margin-bottom: 20px;
-        }
-        p {
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        .youtube-link {
-            display: inline-block;
-            background-color: #ff0000; /* YouTube kırmızı */
+            font-family: 'Inter', sans-serif;
+            background-color: #0F172A; /* Koyu lacivert arka plan rengi */
             color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        .youtube-link:hover {
-            background-color: #cc0000;
-        }
-        .contact-email {
-            margin-top: 30px;
-            font-size: 1.1em;
-        }
-        .contact-email a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .beat-showcase {
-            margin-top: 40px;
-            border-top: 1px solid #eee;
-            padding-top: 30px;
-        }
-        .beat-item {
-            margin-bottom: 25px;
-        }
-        .beat-item h3 {
-            margin-bottom: 10px;
-            color: #555;
-        }
-        .beat-item iframe {
-            width: 100%;
-            max-width: 560px; /* YouTube gömme için standart genişlik */
-            height: 315px;
-            border: none;
-            border-radius: 5px;
+            /* padding-top kaldırıldı çünkü artık sabit bir başlık yok */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Merhaba, Ben Panqe </h1>
-        <p>Merhaba! Ben Panqe, amatör beatmaker ve müzik prodüktörüyüm. Kendi sound'umu yaratmaya ve farklı türlerde beatler üretmeye tutkuyla bağlıyım.</p>
-        <p>Burada en son çalışmalarımı ve projelerimi bulabilirsiniz. Tüm beatlerim YouTube kanalımda yayınlanmaktadır.</p>
 
-        <a href="[https://www.youtube.com/@panqebeats]" target="_blank" class="youtube-link">YouTube Kanalıma Git</a>
+    <!-- Ana İçerik Kutusu -->
+    <!-- Logoları, ana içeriğin en üstüne taşıdık -->
+    <div class="container bg-slate-800 p-8 md:p-12 rounded-xl shadow-lg w-full max-w-4xl mx-auto my-8 relative">
+        
+        <!-- Sosyal Medya İkonları -->
+        <!-- Bu div artık ana içerik kutusunun içinde. -->
+        <div class="absolute top-4 right-4 flex space-x-4">
+            <!-- YouTube Link -->
+            <a href="https://www.youtube.com/@panqebeats" target="_blank" class="text-white hover:text-red-500 transition-colors">
+                <i class="fab fa-youtube fa-xl"></i>
+            </a>
+            <!-- Instagram Link -->
+            <a href="https://www.instagram.com/@panqebeatt" target="_blank" class="text-white hover:text-pink-600 transition-colors">
+                <i class="fab fa-instagram fa-xl"></i> 
+    
+        <!-- Header Section -->
+        <header class="text-center mb-10 mt-12">
+            <!-- "Merhaba, Ben Panqe!" yazısı lacivert yapıldı -->
+            <h1 class="text-4xl md:text-6xl font-bold mb-2 text-blue-500">Merhaba, Ben Panqe!</h1>
+            <p class="text-md md:text-lg text-slate-300">Amatör bir Beatmaker ve Müzik Prodüktörüyüm.</p>
+        </header>
 
-        <div class="beat-showcase">
-            <h2>Öne Çıkan Beatlerim</h2>
-            <p>Aşağıdaki videolara tıklayarak beatlerimi dinleyebilirsiniz. Daha fazlası için YouTube kanalıma göz atmayı unutmayın!</p>
+        <!-- About Section -->
+        <section class="mb-10 text-center">
+            <p class="text-slate-400 leading-relaxed max-w-2xl mx-auto">
+                Müziğe olan tutkumla, kendi sound'umu yaratmaya ve farklı türlerde beatler üretmeye odaklandım.
+                Burada en son çalışmalarımı ve projelerimi bulabilirsiniz. Tüm beatlerim için YouTube kanalıma göz atmayı unutmayın!
+            </p>
+        </section>
 
-            <div class="beat-item">
-                <h3>BOOMBAP TYPE BEAT </h3>
-                <iframe src="https://www.youtube.com/embed/lpdC1ggrtgg?si=aaIRaHWzfxO2QsR9" " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>Bu beat,amatör olarak yaptıklarımdan ilki diyebiliriz. </p>
+        <!-- Beats Showcase Section -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+            <!-- Beat 1 -->
+            <div class="bg-slate-700 p-6 rounded-lg text-center shadow-md transform hover:scale-105 transition-transform duration-300">
+                <!-- Başlık rengi artık beyaz (text-white) -->
+                <h2 class="text-2xl font-bold mb-4 text-white">BOOMBAP TYPE BEAT</h2>
+                <div class="relative pb-[56.25%] h-0 mb-4">
+                    <iframe 
+                        class="absolute top-0 left-0 w-full h-full rounded-lg" 
+                        src="https://www.youtube.com/embed/lpdC1ggrteg" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="text-sm text-slate-400">Bu beat, amatör olarak faaliyetlerden ilki sayılabilir. </p>
             </div>
 
-            <div class="beat-item">
-                <h3>TRAP TYPE BEAT </h3>
-                <iframe src="https://www.youtube.com/embed/mxUgtd_gNn4?si=RLdOBV8oSzwtOiLI" " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>Bu beat,ağır ve etkili bir beattir sadece doğasından anlayan en verimli şekilde kullanabilir. </p>
+            <!-- Beat 2 -->
+            <div class="bg-slate-700 p-6 rounded-lg text-center shadow-md transform hover:scale-105 transition-transform duration-300">
+                <!-- Başlık rengi artık beyaz (text-white) -->
+                <h2 class="text-2xl font-bold mb-4 text-white">TRAP TYPE BEAT </h2>
+                <div class="relative pb-[56.25%] h-0 mb-4">
+                    <iframe 
+                        class="absolute top-0 left-0 w-full h-full rounded-lg" 
+                        src="https://www.youtube.com/embed/mxUqtd_gln4" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="text-sm text-slate-400">Bu beat, kendine güvenenlerin beatidir. </p>
             </div>
+        </section>
 
-            </div>
-
-        <div class="contact-email">
-            <p>Benimle iletişime geçmek isterseniz, aşağıdaki e-posta adresine mail atabilirsiniz:</p>
-            <p>E-posta: <a href="mailto:[panqebeat@gmail.com]">[panqebeat@gmail.com]</a></p>
-        </div>
+        <!-- Contact Section -->
+        <section class="text-center">
+            <!-- "İletişim" yazısı lacivert yapıldı -->
+            <h2 class="text-3xl font-bold mb-4 text-blue-500">İletişim</h2>
+            <p class="text-lg text-slate-400">Benimle iletişime geçmek için:</p>
+            <a href="mailto:panqebeats@gmail.com" class="text-lg text-white hover:text-blue-400 transition-colors">panqebeats@gmail.com</a>
+        </section>
     </div>
+
 </body>
 </html>
