@@ -18,14 +18,14 @@
 
         /* Navigasyon linklerinin hedefi olan bölümlerin üstten boşluğunu ayarlama */
         section {
-            scroll-margin-top: 80px; /* Hakkımda kısmına tıklanınca daha iyi bir noktaya gitmesi için ayarlandı */
+            scroll-margin-top: 100px; /* Hakkımda kısmına tıklanınca daha iyi bir noktaya gitmesi için ayarlandı */
         }
 
-        /* Arka plan animasyonu için keyframes */
+        /* Arka plan animasyonu için keyframes, daha koyu renkler kullanıldı */
         @keyframes background-color-change {
-            0% { background-color: #0F172A; } /* Koyu lacivert */
-            50% { background-color: #080f1e; } /* Daha koyu lacivert */
-            100% { background-color: #0F172A; } /* Koyu lacivert */
+            0% { background-color: #0d121c; } /* Çok koyu lacivert */
+            50% { background-color: #05080e; } /* Siyaha yakın bir koyu ton */
+            100% { background-color: #0d121c; } /* Çok koyu lacivert */
         }
         
         body {
@@ -96,9 +96,9 @@
     <div id="main-content" class="main-content-wrapper">
 
         <!-- Navigasyon Menüsü -->
-        <!-- Sabitlenmiş pozisyon, sol üst köşede -->
+        <!-- Sabitlenmiş pozisyon, sol üst köşede. Arka plan kaldırıldı. -->
         <nav class="fixed top-8 left-8 z-20">
-            <div class="flex space-x-4 bg-slate-800/50 backdrop-blur-sm p-3 rounded-lg">
+            <div class="flex space-x-4">
                 <a href="#about" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">Hakkımda</a>
                 <a href="#beats" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">Beatler</a>
                 <a href="#contact" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">İletişim</a>
@@ -106,9 +106,8 @@
         </nav>
 
         <!-- Sosyal Medya İkonları -->
-        <!-- Sabitlenmiş pozisyon, sağ üst köşede -->
-        <div class="fixed top-8 right-8 flex space-x-4 z-10 bg-slate-800/50 backdrop-blur-sm p-3 rounded-lg">
-            <!-- Her bir logoya tıklama alanı daha belirgin hale getirildi (p-2) -->
+        <!-- Sabitlenmiş pozisyon, sağ üst köşede. Arka plan kaldırıldı. -->
+        <div class="fixed top-8 right-8 flex space-x-4 z-10">
             <!-- YouTube Link -->
             <a href="https://www.youtube.com/@panqebeats" target="_blank" class="text-white hover:text-red-500 transition-colors rounded-full">
                 <i class="fab fa-youtube fa-xl"></i>
@@ -116,7 +115,7 @@
             <!-- Instagram Link -->
             <a href="https://www.instagram.com/panqebeatt/" target="_blank" class="text-white hover:text-pink-600 transition-colors rounded-full">
                 <i class="fab fa-instagram fa-xl"></i>
-            </a> 
+            </a>
         </div>
         
         <!-- Ana içerik için bir kutu oluşturuldu, bu kutu sayfaya ortalanacak -->
@@ -131,8 +130,8 @@
             <!-- About Section -->
             <section id="about" class="mb-10 text-center p-6 rounded-xl">
                 <p class="text-slate-200 leading-relaxed max-w-2xl mx-auto">
-                    Selamlar ben Emre,müziğe olan tutkumla, kendi sound'umu yaratmaya ve farklı türlerde beatler üretmeye odaklandım.Bu sektörde daha yeniyim ve çok fazla projem bulunmuyor.Kendimi geliştirmeyi ve beraber gelişmeyi umut ediyorum.
-                    Burada kendi yaptığım veya yapmadığım free beatler bulunmaktadır.Sizlerin beatleri seveceğinden eminim,beatleri alıp müziğinizi oluşturabilirsiniz.
+                   Selamlar ben Emre,müziğe olan tutkumla, kendi sound'umu yaratmaya ve farklı türlerde beatler üretmeye odaklandım.Bu sektörde daha yeniyim ve çok fazla projem bulunmuyor.Kendimi geliştirmeyi ve beraber gelişmeyi umut ediyorum.
+                Burada kendi yaptığım veya yapmadığım free beatler bulunmaktadır.Sizlerin beatleri seveceğinden eminim,beatleri alıp müziğinizi oluşturabilirsiniz.
                 </p>
             </section>
 
@@ -210,28 +209,28 @@
                     <div class="relative pb-[56.25%] h-0 mb-4">
                         <iframe 
                             class="absolute top-0 left-0 w-full h-full rounded-lg" 
-                            src="https://www.youtube.com/embed/lpdC1ggrtgg?si=zY1pwGWkC08vv3RJ" 
+                            src="https://www.youtube.com/embed/X3eBNKXJPzM?si=MYvWlOP3vs33LV-N" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
                     </div>
-                    <p class="text-sm text-slate-400">Bu beat, rahatlatıcı ve sakin bir sound sunar.</p>
+                    <p class="text-sm text-slate-400">Bu beat, insanları rahatlatan ve genellikle sakinleştiren bir beattir.</p>
                 </div>
 
                 <!-- Beat 6 -->
                 <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg text-center shadow-md transform hover:scale-105 transition-transform duration-300">
-                    <h2 class="text-2xl font-bold mb-4 text-white">DANCEHALL TYPE BEAT </h2>
+                    <h2 class="text-2xl font-bold mb-4 text-white">PIANO TYPE BEAT </h2>
                     <div class="relative pb-[56.25%] h-0 mb-4">
                         <iframe 
                             class="absolute top-0 left-0 w-full h-full rounded-lg" 
-                            src="https://www.youtube.com/embed/mxUgtd_gNn4?si=_GGjaVH3EbBqdDZ2" 
+                            src="https://www.youtube.com/embed/GQtpSmPWc-k?si=xZSpai6R33BHeRu1" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
                     </div>
-                    <p class="text-sm text-slate-400">Bu beat, hareketli ve enerjik bir atmosfer yaratır.</p>
+                    <p class="text-sm text-slate-400">Bu beat, duyguların daha baskın olduğu ve müziği hissetmemizi sağlayan bir beattir.</p>
                 </div>
             </section>
 
