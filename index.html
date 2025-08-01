@@ -16,25 +16,23 @@
             scroll-behavior: smooth;
         }
 
-        /* Arka plan animasyonu için keyframes */
-        @keyframes background-color-change {
-            0% { background-color: #0F172A; } /* Koyu lacivert */
-            50% { background-color: #080f1e; } /* Daha koyu lacivert */
-            100% { background-color: #0F172A; } /* Koyu lacivert */
+        /* Navigasyon linklerinin hedefi olan bölümlerin üstten boşluğunu ayarlama */
+        section {
+            scroll-margin-top: 100px;
         }
 
-        /* Başlık metninin rengini değiştirmek için keyframes */
-        @keyframes header-text-change {
-            0% { color: #3b82f6; } /* Tailwind'in mavi rengi */
-            50% { color: #facc15; } /* Tailwind'in sarı rengi */
-            100% { color: #3b82f6; } /* Tailwind'in mavi rengi */
+        /* Ana kutu için arka plan animasyonu */
+        @keyframes container-color-change {
+            0% { background-color: #1a202c; } /* Koyu lacivert (bg-slate-800'e yakın) */
+            50% { background-color: #0f131a; } /* Daha koyu ton */
+            100% { background-color: #1a202c; }
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             color: #fff;
-            /* Animasyonu body'ye uygula */
-            animation: background-color-change 10s infinite alternate;
+            /* Arka plan animasyonu ana kutuya taşındığı için, body'ye sabit bir renk verildi */
+            background-color: #0F172A;
         }
 
         /* Giriş ekranı için stil */
@@ -94,22 +92,22 @@
         <h1 class="text-yellow-300">Panqe</h1>
     </div>
 
-    <!-- Navigasyon Menüsü -->
-    <!-- Konumu sol üste, sosyal medya ikonları gibi yatay hizalandı -->
-    <nav class="fixed top-8 left-8 z-20">
-        <div class="flex space-x-4">
-            <a href="#about" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">Hakkımda</a>
-            <a href="#beats" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">Beatler</a>
-            <a href="#contact" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">İletişim</a>
-        </div>
-    </nav>
-
     <!-- Ana içerik için kapsayıcı (wrapper) -->
     <div id="main-content" class="main-content-wrapper">
 
         <!-- Ana İçerik Kutusu -->
-        <div class="container bg-slate-800 p-8 md:p-12 rounded-xl shadow-lg w-full max-w-4xl mx-auto my-8 relative">
+        <div class="container bg-slate-800 p-8 md:p-12 rounded-xl shadow-lg w-full max-w-4xl mx-auto my-8 relative" style="animation: container-color-change 10s infinite alternate;">
             
+            <!-- Navigasyon Menüsü -->
+            <!-- Sosyal medya ikonları ile aynı hizaya getirildi -->
+            <nav class="absolute top-8 left-8 z-20">
+                <div class="flex space-x-4">
+                    <a href="#about" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">Hakkımda</a>
+                    <a href="#beats" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">Beatler</a>
+                    <a href="#contact" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">İletişim</a>
+                </div>
+            </nav>
+
             <!-- Sosyal Medya İkonları -->
             <div class="absolute top-8 right-8 flex space-x-4 z-10">
                 <!-- Her bir logoya tıklama alanı daha belirgin hale getirildi (p-2) -->
@@ -125,16 +123,16 @@
             
             <!-- Header Section -->
             <header class="text-center mb-10 mt-20">
-                <!-- Başlık metni için renk animasyonu uygulandı -->
-                <h1 class="text-4xl md:text-6xl font-bold mb-2" style="animation: header-text-change 5s infinite alternate;">Merhaba, Ben Panqe!</h1>
+                <!-- Başlık metni için renk animasyonu kaldırıldı -->
+                <h1 class="text-4xl md:text-6xl font-bold mb-2 text-blue-500">Merhaba, Ben Panqe!</h1>
                 <p class="text-md md:text-lg text-slate-300">Amatör bir Beatmaker ve Müzik Prodüktörüyüm.</p>
             </header>
 
             <!-- About Section -->
             <section id="about" class="mb-10 text-center">
                 <p class="text-slate-400 leading-relaxed max-w-2xl mx-auto">
-                    Selamlar ben Emre,müziğe olan tutkumla kendi sound'umu yaratmaya ve farklı türlerde beatler üretmeye odaklandım.Bu sektörde yeniyim ve çok bir projem bulunmuyor.Kendimi geliştirmeye çalışıyorum,gelişimimi size aktarmayı planlıyorum ve beraber gelişmeyi umut ediyorum.
-                    Burada kendi yaptığım veya yapmadığım free beatler bulunmaktadır.Sizlerin burada paylaşılan beatleri seveceğinizden eminim,beatleri kullanıp müziğinizi oluşturabilirsiniz.
+                    Selamlar ben Emre,müziğe olan tutkumla, kendi sound'umu yaratmaya ve farklı türlerde beatler üretmeye odaklandım.Bu sektörde daha yeniyim ve çok fazla projem bulunmuyor.Kendimi geliştirmeyi ve beraber gelişmeyi umut ediyorum.
+                    Burada kendi yaptığım veya yapmadığım free beatler bulunmaktadır.Sizlerin beatleri seveceğinden eminim,beatleri alıp müziğinizi oluşturabilirsiniz.
                 </p>
             </section>
 
@@ -228,4 +226,4 @@
         };
     </script>
 </body>
-</html> 
+</html>
