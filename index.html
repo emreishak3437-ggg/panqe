@@ -14,29 +14,28 @@
             font-family: 'Inter', sans-serif;
             background-color: #0F172A; /* Koyu lacivert arka plan rengi */
             color: #fff;
-            /* padding-top kaldırıldı çünkü artık sabit bir başlık yok */
         }
     </style>
 </head>
 <body>
 
     <!-- Ana İçerik Kutusu -->
-    <!-- Logoları, ana içeriğin en üstüne taşıdık -->
     <div class="container bg-slate-800 p-8 md:p-12 rounded-xl shadow-lg w-full max-w-4xl mx-auto my-8 relative">
         
         <!-- Sosyal Medya İkonları -->
-        <!-- Bu div artık ana içerik kutusunun içinde. -->
-        <div class="absolute top-4 right-4 flex space-x-4">
+        <!-- İkonların başlıkla çakışmaması için konumu ayarlandı -->
+        <div class="absolute top-8 right-8 flex space-x-4 z-10">
+            <!-- Her bir logoya tıklama alanı daha belirgin hale getirildi (p-2) -->
             <!-- YouTube Link -->
-            <a href="https://www.youtube.com/@panqebeats" target="_blank" class="text-white hover:text-red-500 transition-colors">
+            <a href="https://www.youtube.com/@panqebeats" target="_blank" class="text-white hover:text-red-500 transition-colors p-2 rounded-full">
                 <i class="fab fa-youtube fa-xl"></i>
             </a>
             <!-- Instagram Link -->
-            <a href="https://www.instagram.com/@panqebeatt" target="_blank" class="text-white hover:text-pink-600 transition-colors">
-                <i class="fab fa-instagram fa-xl"></i> 
-    
+            <a href="https://www.instagram.com/@panqebeats" target="_blank" class="text-white hover:text-pink-600 transition-colors p-2 rounded-full">
+                <i class="fab fa-instagram fa-xl"></i>
+           
         <!-- Header Section -->
-        <header class="text-center mb-10 mt-12">
+        <header class="text-center mb-10 mt-20">
             <!-- "Merhaba, Ben Panqe!" yazısı lacivert yapıldı -->
             <h1 class="text-4xl md:text-6xl font-bold mb-2 text-blue-500">Merhaba, Ben Panqe!</h1>
             <p class="text-md md:text-lg text-slate-300">Amatör bir Beatmaker ve Müzik Prodüktörüyüm.</p>
@@ -55,7 +54,7 @@
             <!-- Beat 1 -->
             <div class="bg-slate-700 p-6 rounded-lg text-center shadow-md transform hover:scale-105 transition-transform duration-300">
                 <!-- Başlık rengi artık beyaz (text-white) -->
-                <h2 class="text-2xl font-bold mb-4 text-white">BOOMBAP TYPE BEAT</h2>
+                <h2 class="text-2xl font-bold mb-4 text-white">BOOMBAP RİTİMLERİ</h2>
                 <div class="relative pb-[56.25%] h-0 mb-4">
                     <iframe 
                         class="absolute top-0 left-0 w-full h-full rounded-lg" 
@@ -65,7 +64,7 @@
                         allowfullscreen>
                     </iframe>
                 </div>
-                <p class="text-sm text-slate-400">Bu beat, amatör olarak faaliyetlerden ilki sayılabilir. </p>
+                <p class="text-sm text-slate-400">Bu beat, amatör olarak faaliyetlerden ilki sayılabilir.</p>
             </div>
 
             <!-- Beat 2 -->
@@ -81,7 +80,7 @@
                         allowfullscreen>
                     </iframe>
                 </div>
-                <p class="text-sm text-slate-400">Bu beat, kendine güvenenlerin beatidir. </p>
+                <p class="text-sm text-slate-400">Bu beat, kendine güvenenlerin beatidir.</p>
             </div>
         </section>
 
