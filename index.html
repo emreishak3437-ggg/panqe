@@ -11,11 +11,23 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
         
+        /* Sayfa içindeki kaydırmayı yavaşlatmak için eklendi */
+        html {
+            scroll-behavior: smooth;
+        }
+
         /* Arka plan animasyonu için keyframes */
         @keyframes background-color-change {
             0% { background-color: #0F172A; } /* Koyu lacivert */
             50% { background-color: #080f1e; } /* Daha koyu lacivert */
             100% { background-color: #0F172A; } /* Koyu lacivert */
+        }
+
+        /* Başlık metninin rengini değiştirmek için keyframes */
+        @keyframes header-text-change {
+            0% { color: #3b82f6; } /* Tailwind'in mavi rengi */
+            50% { color: #facc15; } /* Tailwind'in sarı rengi */
+            100% { color: #3b82f6; } /* Tailwind'in mavi rengi */
         }
         
         body {
@@ -83,8 +95,9 @@
     </div>
 
     <!-- Navigasyon Menüsü -->
-    <nav class="fixed top-4 left-4 z-20">
-        <div class="flex flex-col space-y-2">
+    <!-- Konumu sol üste, sosyal medya ikonları gibi yatay hizalandı -->
+    <nav class="fixed top-8 left-8 z-20">
+        <div class="flex space-x-4">
             <a href="#about" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">Hakkımda</a>
             <a href="#beats" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">Beatler</a>
             <a href="#contact" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">İletişim</a>
@@ -105,22 +118,23 @@
                     <i class="fab fa-youtube fa-xl"></i>
                 </a>
                 <!-- Instagram Link -->
-                <a href="https://www.instagram.com/panqebeatt//" target="_blank" class="text-white hover:text-pink-600 transition-colors p-2 rounded-full">
+                <a href="https://www.instagram.com/panqebeatt/" target="_blank" class="text-white hover:text-pink-600 transition-colors p-2 rounded-full">
                     <i class="fab fa-instagram fa-xl"></i>
-                </a>
+                </a> 
             </div>
             
             <!-- Header Section -->
             <header class="text-center mb-10 mt-20">
-                <h1 class="text-4xl md:text-6xl font-bold mb-2 text-blue-500">Merhaba, Ben Panqe!</h1>
+                <!-- Başlık metni için renk animasyonu uygulandı -->
+                <h1 class="text-4xl md:text-6xl font-bold mb-2" style="animation: header-text-change 5s infinite alternate;">Merhaba, Ben Panqe!</h1>
                 <p class="text-md md:text-lg text-slate-300">Amatör bir Beatmaker ve Müzik Prodüktörüyüm.</p>
             </header>
 
             <!-- About Section -->
             <section id="about" class="mb-10 text-center">
                 <p class="text-slate-400 leading-relaxed max-w-2xl mx-auto">
-                   Selamlar ben Emre, Müziğe olan tutkumla kendi sound'umu yaratmaya ve farklı türlerde beatler üretmeye odaklandım.Bu sektörde daha yeniyim ve kendimi geliştirmeye çalışıyorum.
-                    Burada kendi yaptığım veya yapmadığım free beatler bulunmaktadır.Sizlerin beatleri seveceğinizden eminim, Beatleri alıp kendi müziğinizi oluşturabilirsiniz.
+                    Selamlar ben Emre,müziğe olan tutkumla kendi sound'umu yaratmaya ve farklı türlerde beatler üretmeye odaklandım.Bu sektörde yeniyim ve çok bir projem bulunmuyor.Kendimi geliştirmeye çalışıyorum,gelişimimi size aktarmayı planlıyorum ve beraber gelişmeyi umut ediyorum.
+                    Burada kendi yaptığım veya yapmadığım free beatler bulunmaktadır.Sizlerin burada paylaşılan beatleri seveceğinizden eminim,beatleri kullanıp müziğinizi oluşturabilirsiniz.
                 </p>
             </section>
 
@@ -214,4 +228,4 @@
         };
     </script>
 </body>
-</html>
+</html> 
