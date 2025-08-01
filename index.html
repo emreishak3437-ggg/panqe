@@ -21,18 +21,18 @@
             scroll-margin-top: 100px;
         }
 
-        /* Ana kutu için arka plan animasyonu */
-        @keyframes container-color-change {
-            0% { background-color: #1a202c; } /* Koyu lacivert (bg-slate-800'e yakın) */
-            50% { background-color: #0f131a; } /* Daha koyu ton */
-            100% { background-color: #1a202c; }
+        /* Arka plan animasyonu için keyframes */
+        @keyframes background-color-change {
+            0% { background-color: #0F172A; } /* Koyu lacivert */
+            50% { background-color: #080f1e; } /* Daha koyu lacivert */
+            100% { background-color: #0F172A; } /* Koyu lacivert */
         }
-
+        
         body {
             font-family: 'Inter', sans-serif;
             color: #fff;
-            /* Arka plan animasyonu ana kutuya taşındığı için, body'ye sabit bir renk verildi */
-            background-color: #0F172A;
+            /* Arka plan animasyonu body'ye uygulandı */
+            animation: background-color-change 10s infinite alternate;
         }
 
         /* Giriş ekranı için stil */
@@ -95,51 +95,54 @@
     <!-- Ana içerik için kapsayıcı (wrapper) -->
     <div id="main-content" class="main-content-wrapper">
 
-        <!-- Ana İçerik Kutusu -->
-        <div class="container bg-slate-800 p-8 md:p-12 rounded-xl shadow-lg w-full max-w-4xl mx-auto my-8 relative" style="animation: container-color-change 10s infinite alternate;">
-            
-            <!-- Navigasyon Menüsü -->
-            <!-- Sosyal medya ikonları ile aynı hizaya getirildi -->
-            <nav class="absolute top-8 left-8 z-20">
-                <div class="flex space-x-4">
-                    <a href="#about" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">Hakkımda</a>
-                    <a href="#beats" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">Beatler</a>
-                    <a href="#contact" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">İletişim</a>
-                </div>
-            </nav>
-
-            <!-- Sosyal Medya İkonları -->
-            <div class="absolute top-8 right-8 flex space-x-4 z-10">
-                <!-- Her bir logoya tıklama alanı daha belirgin hale getirildi (p-2) -->
-                <!-- YouTube Link -->
-                <a href="https://www.youtube.com/@panqebeats" target="_blank" class="text-white hover:text-red-500 transition-colors p-2 rounded-full">
-                    <i class="fab fa-youtube fa-xl"></i>
-                </a>
-                <!-- Instagram Link -->
-                <a href="https://www.instagram.com/panqebeatt/" target="_blank" class="text-white hover:text-pink-600 transition-colors p-2 rounded-full">
-                    <i class="fab fa-instagram fa-xl"></i>
-                </a> 
+        <!-- Navigasyon Menüsü -->
+        <!-- Sabitlenmiş pozisyon, sol üst köşede -->
+        <nav class="fixed top-8 left-8 z-20">
+            <div class="flex space-x-4 bg-slate-800/50 backdrop-blur-sm p-3 rounded-lg">
+                <a href="#about" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">Hakkımda</a>
+                <a href="#beats" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">Beatler</a>
+                <a href="#contact" class="text-white text-sm font-bold hover:text-blue-500 transition-colors">İletişim</a>
             </div>
-            
+        </nav>
+
+        <!-- Sosyal Medya İkonları -->
+        <!-- Sabitlenmiş pozisyon, sağ üst köşede -->
+        <div class="fixed top-8 right-8 flex space-x-4 z-10 bg-slate-800/50 backdrop-blur-sm p-3 rounded-lg">
+            <!-- Her bir logoya tıklama alanı daha belirgin hale getirildi (p-2) -->
+            <!-- YouTube Link -->
+            <a href="https://www.youtube.com/@panqebeats" target="_blank" class="text-white hover:text-red-500 transition-colors rounded-full">
+                <i class="fab fa-youtube fa-xl"></i>
+            </a>
+            <!-- Instagram Link -->
+            <a href="https://www.instagram.com/panqebeatt/" target="_blank" class="text-white hover:text-pink-600 transition-colors rounded-full">
+                <i class="fab fa-instagram fa-xl"></i>
+            </a>
+            <!-- Discord Link -->
+            <a href="https://discord.gg/SeninSunucuLinkin" target="_blank" class="text-white hover:text-purple-500 transition-colors rounded-full">
+                <i class="fab fa-discord fa-xl"></i>
+            </a>
+        </div>
+        
+        <!-- Ana içerik için bir kutu oluşturuldu, bu kutu sayfaya ortalanacak -->
+        <div class="p-8 md:p-12 rounded-xl w-full max-w-4xl mx-auto my-8 relative">
             <!-- Header Section -->
             <header class="text-center mb-10 mt-20">
-                <!-- Başlık metni için renk animasyonu kaldırıldı -->
                 <h1 class="text-4xl md:text-6xl font-bold mb-2 text-blue-500">Merhaba, Ben Panqe!</h1>
                 <p class="text-md md:text-lg text-slate-300">Amatör bir Beatmaker ve Müzik Prodüktörüyüm.</p>
             </header>
 
             <!-- About Section -->
-            <section id="about" class="mb-10 text-center">
-                <p class="text-slate-400 leading-relaxed max-w-2xl mx-auto">
-                    Selamlar ben Emre,müziğe olan tutkumla, kendi sound'umu yaratmaya ve farklı türlerde beatler üretmeye odaklandım.Bu sektörde daha yeniyim ve çok fazla projem bulunmuyor.Kendimi geliştirmeyi ve beraber gelişmeyi umut ediyorum.
-                    Burada kendi yaptığım veya yapmadığım free beatler bulunmaktadır.Sizlerin beatleri seveceğinden eminim,beatleri alıp müziğinizi oluşturabilirsiniz.
+            <section id="about" class="mb-10 text-center bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl">
+                <p class="text-slate-200 leading-relaxed max-w-2xl mx-auto">
+                Selamlar ben Emre,müziğe olan tutkumla kendi sound'umu yaratmaya ve farklı türlerde beatler üretmeye odaklandım.Bu sektörde daha yeniyim ve çok fazla projem bulunmuyor.Kendimi geliştirmeyi ve beraber gelişmeyi umut ediyorum.
+                    Burada kendi yaptığım veya yapmadığım free beatler bulunmaktadır.Sizlerin beatleri seveceğinden eminim,beatleri alıp müziğinizi oluşturabilirsiniz.    
                 </p>
             </section>
 
             <!-- Beats Showcase Section -->
             <section id="beats" class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
                 <!-- Beat 1 -->
-                <div class="bg-slate-700 p-6 rounded-lg text-center shadow-md transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg text-center shadow-md transform hover:scale-105 transition-transform duration-300">
                     <h2 class="text-2xl font-bold mb-4 text-white">BOOMBAP TYPE BEAT </h2>
                     <div class="relative pb-[56.25%] h-0 mb-4">
                         <iframe 
@@ -154,7 +157,7 @@
                 </div>
 
                 <!-- Beat 2 -->
-                <div class="bg-slate-700 p-6 rounded-lg text-center shadow-md transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg text-center shadow-md transform hover:scale-105 transition-transform duration-300">
                     <h2 class="text-2xl font-bold mb-4 text-white">TRAP TYPE BEAT </h2>
                     <div class="relative pb-[56.25%] h-0 mb-4">
                         <iframe 
@@ -172,7 +175,7 @@
             <!-- İkinci video satırı eklendi -->
             <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
                 <!-- Beat 3 -->
-                <div class="bg-slate-700 p-6 rounded-lg text-center shadow-md transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg text-center shadow-md transform hover:scale-105 transition-transform duration-300">
                     <h2 class="text-2xl font-bold mb-4 text-white">SAD TYPE BEAT </h2>
                     <div class="relative pb-[56.25%] h-0 mb-4">
                         <iframe 
@@ -187,7 +190,7 @@
                 </div>
 
                 <!-- Beat 4 -->
-                <div class="bg-slate-700 p-6 rounded-lg text-center shadow-md transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg text-center shadow-md transform hover:scale-105 transition-transform duration-300">
                     <h2 class="text-2xl font-bold mb-4 text-white">DARK TYPE BEAT </h2>
                     <div class="relative pb-[56.25%] h-0 mb-4">
                         <iframe 
@@ -203,7 +206,7 @@
             </section>
 
             <!-- Contact Section -->
-            <section id="contact" class="text-center">
+            <section id="contact" class="text-center bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl">
                 <h2 class="text-3xl font-bold mb-4 text-blue-500">İletişim</h2>
                 <p class="text-lg text-slate-400">Benimle iletişime geçmek için:</p>
                 <a href="mailto:panqebeats@gmail.com" class="text-lg text-white hover:text-blue-400 transition-colors">panqebeats@gmail.com</a>
