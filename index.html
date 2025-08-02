@@ -303,17 +303,19 @@
             // Sayfanın lang özelliğini güncelle
             document.documentElement.lang = lang;
             // Dil butonlarının stilini güncelle
-            document.getElementById('lang-tr').classList.remove('bg-blue-500', 'hover:bg-blue-600');
-            document.getElementById('lang-tr').classList.add('bg-slate-700', 'hover:bg-slate-600');
-            document.getElementById('lang-en').classList.remove('bg-blue-500', 'hover:bg-blue-600');
-            document.getElementById('lang-en').classList.add('bg-slate-700', 'hover:bg-slate-600');
+            const trButton = document.getElementById('lang-tr');
+            const enButton = document.getElementById('lang-en');
 
             if (lang === 'tr') {
-                document.getElementById('lang-tr').classList.remove('bg-slate-700', 'hover:bg-slate-600');
-                document.getElementById('lang-tr').classList.add('bg-blue-500', 'hover:bg-blue-600');
+                trButton.classList.remove('bg-slate-700', 'hover:bg-slate-600');
+                trButton.classList.add('bg-blue-500', 'hover:bg-blue-600');
+                enButton.classList.remove('bg-blue-500', 'hover:bg-blue-600');
+                enButton.classList.add('bg-slate-700', 'hover:bg-slate-600');
             } else if (lang === 'en') {
-                document.getElementById('lang-en').classList.remove('bg-slate-700', 'hover:bg-slate-600');
-                document.getElementById('lang-en').classList.add('bg-blue-500', 'hover:bg-blue-600');
+                enButton.classList.remove('bg-slate-700', 'hover:bg-slate-600');
+                enButton.classList.add('bg-blue-500', 'hover:bg-blue-600');
+                trButton.classList.remove('bg-blue-500', 'hover:bg-blue-600');
+                trButton.classList.add('bg-slate-700', 'hover:bg-slate-600');
             }
         };
 
@@ -337,5 +339,6 @@
     </script>
 </body>
 </html>
+
 
 
