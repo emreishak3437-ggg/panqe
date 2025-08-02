@@ -244,8 +244,79 @@
         </footer>
     </div>
 
-    <script>
-        // Sayfa yüklendiğinde çalışacak JavaScript kodu
+<script>
+        const translations = {
+            tr: {
+                "about-link": "Hakkımda",
+                "beats-link": "Beatler",
+                "contact-link": "İletişim",
+                "header-subtitle": "Amatör bir Beatmaker ve Müzik Prodüktörüyüm.",
+                "about-text": "Selamlar ben emre. Müziğe olan tutkumla, kendi sound'umu yaratmaya ve farklı türlerde beatler üretmeye odaklandım. Burada kendi yaptığım veya yapmadığım free beatler bulunmaktadır. İnsanların beatleri seveceğinden eminiz, alıp kullanabilirsiniz.",
+                "beat1-title": "BOOMBAP TYPE BEAT",
+                "beat1-desc": "Bu beat, sıradan insanların kullanacağı bir beat değildir.",
+                "beat2-title": "TRAP TYPE BEAT",
+                "beat2-desc": "Bu beat, ağır duyguları olan ve sert bir beattir.",
+                "beat3-title": "SAD TYPE BEAT",
+                "beat3-desc": "Bu beat, duyguların daha baskın olduğu bir beattir.",
+                "beat4-title": "DARK TYPE BEAT",
+                "beat4-desc": "Bu beat, cesaretin ta kendisidir ve korkusuz bir beattir.",
+                "beat5-title": "CHILL TYPE BEAT",
+                "beat5-desc": "Bu beat, rahatlatıcı ve sakin bir sound sunar.",
+                "beat6-title": "DANCEHALL TYPE BEAT",
+                "beat6-desc": "Bu beat, hareketli ve enerjik bir atmosfer yaratır.",
+                "contact-title": "İletişim",
+                "contact-text": "Benimle iletişime geçmek için:",
+                "footer-text": "© 2025 Panqe. Tüm hakları saklıdır.",
+            },
+            en: {
+                "about-link": "About",
+                "beats-link": "Beats",
+                "contact-link": "Contact",
+                "header-subtitle": "An Amateur Beatmaker and Music Producer.",
+                "about-text": "Hello, I'm Emre. With my passion for music, I focus on creating my own sound and producing beats in various genres. Here you can find my own free beats and others. We are sure people will love the beats, feel free to use them.",
+                "beat1-title": "BOOMBAP TYPE BEAT",
+                "beat1-desc": "This beat is not a beat to be used by ordinary people.",
+                "beat2-title": "TRAP TYPE BEAT",
+                "beat2-desc": "This is a harsh beat with strong emotions.",
+                "beat3-title": "SAD TYPE BEAT",
+                "beat3-desc": "This is a beat where emotions are more dominant.",
+                "beat4-title": "DARK TYPE BEAT",
+                "beat4-desc": "This beat is courage itself and a fearless beat.",
+                "beat5-title": "CHILL TYPE BEAT",
+                "beat5-desc": "This beat offers a relaxing and calm sound.",
+                "beat6-title": "DANCEHALL TYPE BEAT",
+                "beat6-desc": "This beat creates a lively and energetic atmosphere.",
+                "contact-title": "Contact",
+                "contact-text": "To get in touch with me:",
+                "footer-text": "© 2025 Panqe. All rights reserved.",
+            }
+        };
+
+        const setLanguage = (lang) => {
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-lang');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            // Sayfanın lang özelliğini güncelle
+            document.documentElement.lang = lang;
+            // Dil butonlarının stilini güncelle
+            document.getElementById('lang-tr').classList.remove('bg-blue-500', 'hover:bg-blue-600');
+            document.getElementById('lang-tr').classList.add('bg-slate-700', 'hover:bg-slate-600');
+            document.getElementById('lang-en').classList.remove('bg-blue-500', 'hover:bg-blue-600');
+            document.getElementById('lang-en').classList.add('bg-slate-700', 'hover:bg-slate-600');
+
+            if (lang === 'tr') {
+                document.getElementById('lang-tr').classList.remove('bg-slate-700', 'hover:bg-slate-600');
+                document.getElementById('lang-tr').classList.add('bg-blue-500', 'hover:bg-blue-600');
+            } else if (lang === 'en') {
+                document.getElementById('lang-en').classList.remove('bg-slate-700', 'hover:bg-slate-600');
+                document.getElementById('lang-en').classList.add('bg-blue-500', 'hover:bg-blue-600');
+            }
+        };
+
         window.onload = function() {
             const splashScreen = document.getElementById('splash-screen');
             const mainContent = document.getElementById('main-content');
@@ -255,7 +326,15 @@
                 splashScreen.classList.add('hidden');
                 mainContent.classList.add('visible');
             }, 2000);
+
+            // Dil butonlarına tıklama olaylarını ekle
+            document.getElementById('lang-tr').addEventListener('click', () => setLanguage('tr'));
+            document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
+
+            // Sayfa yüklendiğinde varsayılan dili ayarla
+            setLanguage('tr') 
         };
     </script>
 </body>
 </html>
+
